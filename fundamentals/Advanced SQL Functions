@@ -1,0 +1,35 @@
+--Timestamps and Extract - Challenge Tasks
+
+
+---What months did payments occur in? Show the full month name.
+SELECT DISTINCT TO_CHAR(payment_date, 'Month') AS month_name
+FROM payment;
+
+---How many payments occurred on a monday?
+SELECT COUNT(*)
+FROM payment
+WHERE EXTRACT(DOW FROM payment_date) = 1;
+
+
+--MATHEMATICAL FUNCTIONS 
+
+
+--- Show each payment amount and the rounded value.
+SELECT amount, ROUND(amount) AS rounded_amount
+FROM payment;
+
+--- Show each payment amount and the value rounded up.
+SELECT amount, CEIL (amount) AS rounded_up
+FROM payment;
+
+
+--STRING FUNCTIONS
+
+--- Show email and the email domain for each customer.
+SELECT email, SUBSTRING(email FROM POSITION('@' IN email) + 1) AS domain
+FROM customer;
+
+--- Show each customer's full name as "LASTNAME, Firstname".
+SELECT UPPER(last_name) || ', ' || INITCAP(first_name) AS formatted_name
+FROM customer;
+
