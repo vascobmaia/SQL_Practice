@@ -1,0 +1,27 @@
+-- Conditional Expressions and Procedures
+
+--- CASE Challenge
+
+SELECT 
+SUM(
+		CASE
+	WHEN rating = 'R' THEN 1
+ 	ELSE 0
+	END
+) AS r_rating,
+    
+SUM(
+		CASE
+	WHEN rating = 'PG' THEN 1
+	ELSE 0
+	END
+) AS pg_rating,
+    
+SUM(
+        CASE
+	WHEN rating = 'PG-13' THEN 1
+	ELSE 0
+	END
+) AS pg13_rating
+	
+FROM film;
