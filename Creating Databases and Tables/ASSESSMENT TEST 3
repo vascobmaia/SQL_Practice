@@ -1,0 +1,43 @@
+-- Assessment Test 3 - Creating Databases and Tables (PostgreSQL)
+
+--- 1) Creating the database School on the menu
+
+--- 2) Tables
+
+CREATE TABLE students(
+	student_id serial PRIMARY KEY,
+	first_name VARCHAR(45) NOT NULL,
+	last_name VARCHAR(45) NOT NULL, 
+	homeroom_number integer,	
+	phone VARCHAR(20) UNIQUE NOT NULL,
+	email VARCHAR(115) UNIQUE,
+	grad_year integer
+);
+
+CREATE TABLE teachers (
+	teacher_id      SERIAL PRIMARY KEY,
+	first_name      VARCHAR(45) NOT NULL,
+	last_name       VARCHAR(45) NOT NULL,
+	homeroom_number INT,
+	department      VARCHAR(45) NOT NULL,
+	email           VARCHAR(255) NOT NULL UNIQUE,
+	phone           VARCHAR(20)  NOT NULL UNIQUE
+);
+
+
+--- 3) Challenges 
+
+---- Insert a student named Mark Watney (student_id=1) who has a phone number of 777-555-1234 and doesn't have an email. He graduates in 2035 and has 5 as a homeroom number.
+
+INSERT INTO students (student_id, first_name, last_name, homeroom_number, phone, email, graduation_year)
+VALUES (1, 'Mark', 'Watney', 5, '777-555-1234', NULL, 2035);
+
+---- Insert a teacher names Jonas Salk (teacher_id = 1) who as a homeroom number of 5 and is from the Biology department. His contact info is: jsalk@school.org and a phone number of 777-555-4321.
+
+INSERT INTO teachers (teacher_id, first_name, last_name, homeroom_number, department, email, phone)
+VALUES (1, 'Jonas', 'Salk', 5, 'Biology', 'jsalk@school.org', '777-555-4321');
+
+
+
+
+
