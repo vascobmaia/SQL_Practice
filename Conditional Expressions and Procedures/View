@@ -1,0 +1,9 @@
+-- Conditional Expressions and Procedures
+
+--- View Challenge
+
+CREATE VIEW customer_info AS
+SELECT c.first_name, c.last_name, a.address
+FROM customer c
+INNER JOIN address a
+ON c.address_id = a.address_id;
