@@ -5,6 +5,3 @@
 SELECT inventory_id,
 CHAR_LENGTH(CAST(inventory_id AS VARCHAR)) AS id_length
 FROM inventory;
-
-
-
